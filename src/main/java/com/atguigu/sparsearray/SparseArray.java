@@ -1,9 +1,9 @@
 package com.atguigu.sparsearray;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.alibaba.fastjson.JSON;
+
+import java.util.*;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * @program: git_springcloud
@@ -22,6 +22,7 @@ public class SparseArray {
         System.out.println(arr[0][0]);
         arr[1][2] = 2;
         arr[2][3] = 1;
+        arr[4][4] = 1;
         int t = 1;
         List<Map<String, Integer>> list = new ArrayList();
         for (int i = 0; i < arr.length; i++) {
@@ -62,8 +63,8 @@ public class SparseArray {
         int[][] resultArr = new int[spareArr[0][0]][spareArr[0][1]];
 
 
-        for(int i=1;i<spareArr.length;i++){
-            resultArr[spareArr[i][0]][spareArr[i][1]] =spareArr[i][2];
+        for (int i = 1; i < spareArr.length; i++) {
+            resultArr[spareArr[i][0]][spareArr[i][1]] = spareArr[i][2];
         }
         System.out.println("稀疏数组 --->转换为数组后输出");
 
@@ -73,7 +74,11 @@ public class SparseArray {
                 System.out.print(resultArr[i][j] + " ");
             }
         }
-
+        System.out.println();
+        String s = JSON.toJSONString(resultArr);
+        System.out.println(s);
+        int[][] ints = JSON.parseObject(s, int[][].class);
+        Queue queue = new LinkedBlockingDeque();
 
     }
 }
