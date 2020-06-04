@@ -1,4 +1,4 @@
-package com.auguigu.sparsearray;
+package com.atguigu.sparsearray;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ public class SparseArray {
         spareArr[0][0] = 11;//行
         spareArr[0][1] = 11;//列
         spareArr[0][2] = t;//有值的个数
-        System.out.println("转换后的稀疏数组输出-------");
+        System.out.println("数组 --->转换为稀疏数组后输出");
         for (int i = 0; i < list.size(); i++) {
             spareArr[i + 1][0] = list.get(i).get("i");
             spareArr[i + 1][1] = list.get(i).get("j");
@@ -58,5 +58,22 @@ public class SparseArray {
         }
         System.out.println();
         System.out.println("");
+
+        int[][] resultArr = new int[spareArr[0][0]][spareArr[0][1]];
+
+
+        for(int i=1;i<spareArr.length;i++){
+            resultArr[spareArr[i][0]][spareArr[i][1]] =spareArr[i][2];
+        }
+        System.out.println("稀疏数组 --->转换为数组后输出");
+
+        for (int i = 0; i < resultArr.length; i++) {
+            System.out.println();
+            for (int j = 0; j < resultArr[i].length; j++) {
+                System.out.print(resultArr[i][j] + " ");
+            }
+        }
+
+
     }
 }
