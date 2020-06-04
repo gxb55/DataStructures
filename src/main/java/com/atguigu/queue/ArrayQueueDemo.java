@@ -15,8 +15,11 @@ public class ArrayQueueDemo {
         queue.add(12);
         queue.add(123);
         int i = queue.get();
+        System.out.println(i);
          i = queue.get();
+        System.out.println(i);
          i = queue.get();
+        System.out.println(i);
          i = queue.get();
         System.out.println(i);
     }
@@ -46,15 +49,15 @@ class ArrayQueue {
     }
 
     public int get() throws Exception {
-        if(front == rear){
+        if(front > rear){
             throw new Exception("队列中没有值了！");
         }
         int val = arr[front];
         front++;
-        for(int i=0;i<arr.length-1;i++){
+       /* for(int i=0;i<arr.length-1;i++){
             arr[i]=arr[i+1];
         }
-        rear--;
+        rear--;*/
         return val;
     }
 }
