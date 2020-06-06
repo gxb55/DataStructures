@@ -15,10 +15,10 @@ public class Service {
     try {
       String s = jedis.get("user:" + name);
       if (s == null) {
-        jedis.setex("user:" + name, 20, Long.MAX_VALUE - 20 + "");
+        jedis.setex("user:" + name, 5, Long.MAX_VALUE - 20 + "");
       } else {
-        jedis.incr("user:" + name);
-        business();
+        Long incr = jedis.incr("user:" + name);
+        business(name,(20-(Long.MAX_VALUE -incr)));
       }
       return 1;
     } catch (JedisDataException e) {
@@ -29,8 +29,8 @@ public class Service {
     }
   }
 
-  public void business() {
-    System.out.println("你调用了我的接口");
+  public void business(String name,Long time) {
+    System.out.println(name+"你调用了我的接口,第"+time+"次");
   }
 
   public static void main(String[] args) {
