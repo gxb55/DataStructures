@@ -9,9 +9,9 @@ import java.util.List;
 public class Josepfu {
   public static void main(String[] args) {
     CircleSingleLinkedList circle = new CircleSingleLinkedList();
-    circle.addBoy(5);
+    circle.addBoy(125);
     circle.list();
-    circle.countBoy(1, 2, 5);
+    circle.countBoy(10, 20, 125);
   }
 }
 
@@ -47,17 +47,18 @@ class CircleSingleLinkedList {
     if (first.getNo() == -1 || startNo < 0 || startNo > nums) {
       System.out.println("参数不合理！");
     }
-    List<Integer> list = new ArrayList<>();
-    Boy helper = null; // 数数小孩的前一个节点，因为要借助他来删除数数的小孩
-    Boy temp = null; // 数数的小孩
-    Boy boy = first;
-    while (true) {
-      if (boy.getNext().getNo() == startNo) {
-        helper = boy;
-        temp = boy.getNext();
+    Boy helper = first; // 数数小孩的前一个节点，因为要借助他来删除数数的小孩
+    Boy temp = first; // 数数的小孩
+    while (true) {//初始化的时候将helper移到队列的尾部即first的前一个位置
+      if (helper.getNext().getNo() == temp.getNo()) {
         break;
       }
-      boy = boy.getNext();
+        helper = helper.getNext();
+    }
+
+    for(int i=0;i<startNo-1;i++){
+        temp = temp.getNext();
+        helper =helper.getNext();
     }
     while (true) {
       for (int i = 0; i < countNum - 1; i++) {
@@ -65,19 +66,15 @@ class CircleSingleLinkedList {
         temp = temp.getNext();
       }
       // 找到了这个小孩 让他出队
-      list.add(temp.getNo());
-      helper.setNext(temp.getNext());
-      temp = helper.getNext();
-      if (list.size() == nums) {
-        break;
+      System.out.println(temp.getNo()+"  出圈了");
+      temp = temp.getNext();
+      helper.setNext(temp);
+      if(helper.getNo() == temp.getNo()){
+        System.out.println(temp.getNo()+"  最后出圈了");
+          break;
       }
     }
-    System.out.println("出队的顺序是：");
-    list.stream()
-        .forEach(
-            x -> {
-              System.out.println(x);
-            });
+
   }
 
   public void list() {
