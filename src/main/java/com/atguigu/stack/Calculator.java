@@ -3,11 +3,12 @@ package com.atguigu.stack;
 /**
  * @ClassName Calculator @Author guoxiaobing @Date 2020/6/18 16:06 @Version 1.0 @Description
  * 栈来实现计算器功能
+ * 根据笔记的来写 两个栈一个存放数字一个存放符号，放入符号的时候判断如果符号的优先级比前面一个的优先级大则直接放入，如果优先级等于栈中符号的优先级则取出两个数来做运算
  */
 public class Calculator {
   public static void main(String[] args) {
-    // infixCalculator();+(8*9-10)
-    String str = "100+20*(6-4)+(8*9-10)";
+    // infixCalculator();+(8*9-10) 100+20*2+620
+    String str = "100+20*(6-4)+((8*9-10)*10)";
     ArrayStack2 operStack = new ArrayStack2(str.length());
     ArrayStack2 numStack = new ArrayStack2(str.length());
     char[] chars = str.toCharArray();
@@ -30,8 +31,11 @@ public class Calculator {
             operStack.pop(); // 把左括号出栈
             continue;
           }
-
-          if (operStack.priority(pop) < operStack.priority(chars[i]) || pop == '(') { // 如果新加入的符号优先级大于栈中的符号优先级则直接假如
+            /**
+             * 如果新加入的符号优先级大于栈中的符号优先级则直接假如,如果是左括号直接放入，
+             * 当渠道右括号的时候从栈中取出的时候，将左右括号中间的运算符取出来，然后取出数来计算
+             */
+          if (operStack.priority(pop) < operStack.priority(chars[i]) || pop == '(') {
             operStack.push(chars[i]);
           } else {
             numStack.push(numStack.cal(numStack.pop(), numStack.pop(), operStack.pop()));
