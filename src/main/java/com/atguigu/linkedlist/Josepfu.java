@@ -1,8 +1,5 @@
 package com.atguigu.linkedlist;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @ClassName Josepfu @Author guoxiaobing @Date 2020/6/16 17:33 @Version 1.0 @Description 约瑟夫问题，环形链表
  */
