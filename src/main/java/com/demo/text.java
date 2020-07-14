@@ -14,5 +14,14 @@ public class text {
         System.out.println(11);
         break inner;
       }
+
+
+      if(a>4){
+          System.out.println(555);
+      }else if (a>3){
+          System.out.println(333);
+      }else{
+          System.out.println(222);
+      }
   }
 }
