@@ -11,10 +11,10 @@ import java.util.Arrays;
  */
 public class ShellSort {
   public static void main(String[] args) {
-      /*long time1 =System.currentTimeMillis();
-      int arr[] = new int[80000];
-      for(int i=0;i<80000;i++){
-          arr[i]= (int) (Math.random()*90000);
+      long time1 =System.currentTimeMillis();
+      int arr[] = new int[800000];
+      for(int i=0;i<800000;i++){
+          arr[i]= (int) (Math.random()*900000);
       }
       //sort(arr);
       sort1(arr);
@@ -25,12 +25,12 @@ public class ShellSort {
       for(int i=0;i<80000;i++){
           arr1[i]= (int) (Math.random()*90000);
       }
-      bubbleSort(arr1);
-      System.out.println(System.currentTimeMillis()-time1);*/
+      //bubbleSort(arr1);
+      System.out.println(System.currentTimeMillis()-time1);
 
-      int arr3[] = {101,21, 33, 1, 151};
+     /* int arr3[] = {101,21, 33, 1, 151};
       shellSort(arr3);
-      System.out.println(Arrays.toString(arr3));
+      System.out.println(Arrays.toString(arr3));*/
 
   }
 

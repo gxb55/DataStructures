@@ -1,5 +1,6 @@
 package com.demo.work;
 
+import cn.hutool.core.date.DateTime;
 import org.apache.commons.lang3.time.DateUtils;
 
 import java.text.DateFormat;
@@ -19,10 +20,10 @@ import java.util.Locale;
 public class deta {
   public static void main(String[] args) throws ParseException {
       //Date date = new Date();
-      Date date = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US).parse("Fri Jul 24 00:00:00 CST 2020");
+      Date date = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US).parse("Fri Jul 17 00:00:00 CST 2020");
 
       DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-      Date truncate = DateUtils.truncate(date, Calendar.DATE);
+      Date truncate = DateUtils.truncate(new DateTime(), Calendar.DATE);
       System.out.println(dateFormat.format(truncate));
   }
 }

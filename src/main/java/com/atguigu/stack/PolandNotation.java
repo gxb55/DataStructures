@@ -114,6 +114,11 @@ public class PolandNotation {
     calculate(suffix, list);
   }
 
+  /**
+   * 遇到数字直接入栈，遇到符号则取出两个数来运算然后将结果放入到数栈中去
+   * @param suffix
+   * @param list
+   */
   private static void calculate(String suffix, List<String> list) {
     Stack<String> numStack = new Stack();
     for (String str : list) {
