@@ -15,17 +15,17 @@ import java.util.Map;
  */
 public class JedisTest {
   private Jedis jedis = null;
-
+//10.200.2.105:7000
   @Before
   public void connectJedis() {
-    jedis = new Jedis("127.0.0.1", 6379);
+    jedis = new Jedis("10.200.2.105", 7000);
   }
 
   @Test
   public void testJedis() {
     /** 1.链接redis 2.操作redis 3.关闭链接 */
-    jedis.set("name", "guoxb");
-    String name = jedis.get("name");
+    String name = jedis.get("18595917022");
+
     System.out.println(name);
   }
 

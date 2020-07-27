@@ -1,5 +1,7 @@
 package com.demo;
 
+import java.util.Calendar;
+
 /**
  * @ClassName text
  * @Author guoxiaobing
@@ -9,7 +11,9 @@ package com.demo;
  */
 public class text {
   public static void main(String[] args) {
-    int a = 5;
+      int i = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+      System.out.println("dddd"+i);
+      int a = 5;
     inner: if(a>2){
         System.out.println(11);
         break inner;
