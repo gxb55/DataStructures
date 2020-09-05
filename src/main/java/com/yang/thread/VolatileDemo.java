@@ -3,6 +3,13 @@ package com.yang.thread;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 多线程
+ *  原子性
+ *  可见性
+ *  禁止指令重排
+ *
+ */
 public class VolatileDemo {
     public static void main(String[] args) {
         volatileVisibilityDemo();
