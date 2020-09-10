@@ -16,13 +16,13 @@ public class HuffmanTree {
   public static void main(String[] args) {
       int[] arr = {13,7,8,3,29,6,1};
       Node huffmanTree = createHuffmanTree(arr);
-     // preLoop(huffmanTree);
-      List<Node> nodes = new ArrayList<>();
+      preLoop(huffmanTree);
+      /*List<Node> nodes = new ArrayList<>();
       for(int value:arr){
           nodes.add(new Node(value));
       }
       Node node = buildTree(nodes);
-      preLoop(node);
+      preLoop(node);*/
   }
 
     /**
