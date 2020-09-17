@@ -47,6 +47,8 @@ public class HuffmanCode {
       Node huffmanTree = createHuffmanTree(nodes);
         //根据霍夫曼树获取霍夫曼编码，
       Map<Byte, String> codes = getCodes(huffmanTree);
+      System.out.println(codes.toString());
+
       //根据霍夫曼编码获取霍夫曼数组，即没个字母会有一个对应的霍夫曼编码，使用霍夫曼编码来标识内容
       byte[] zip = zip(contentByte, codes);
       return zip;

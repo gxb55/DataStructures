@@ -49,8 +49,11 @@ public class HuffmanTree {
           nodes.remove(leftNode);
           nodes.remove(rightNode);
           nodes.add(root);
-         // System.out.println(nodes.toString());
       }
+
+
+
+
       return nodes.get(0);
   }
 
