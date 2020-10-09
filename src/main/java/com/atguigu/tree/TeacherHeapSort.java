@@ -18,7 +18,8 @@ public class TeacherHeapSort {
         for(int i = 0; i < 8000000; ++i) {
             arr[i] = (int)(Math.random() * 8000000.0D);
         }*/
-        int[] arr = {1,5,8,9,60,23,-1,56,-8,900};
+      //  int[] arr = {1,5,8,9,60,23,-1,56,-8,900};
+        int[] arr = {1,5,7,3,0,18,9,6,15};
         System.out.println("排序前");
         Date data1 = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -49,6 +50,12 @@ public class TeacherHeapSort {
 
     }
 
+    /**
+     * 每次都会去调整整个的位置，从树的最后一课子树从下到上，从左到右调整
+     * @param arr
+     * @param i
+     * @param lenght
+     */
     public static void adjustHeap(int[] arr, int i, int lenght) {
         int temp = arr[i];
 

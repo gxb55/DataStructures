@@ -1,15 +1,15 @@
 package com.Interview.thread;
 
-import cn.hutool.core.util.RandomUtil;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.UUID;
 
 /**
- * @ClassName MapDemo @Author guoxiaobing @Date 2020/6/17 9:14 @Version 1.0 @Description 多线程下
+ * @ClassName MapDemo
+ * @Author guoxiaobing
+ * @Date 2020/6/17 9:14
+ * @Version 1.0
+ * @Description 多线程下
  * map是不安全的我们来演示下
  */
 public class MapDemo {
